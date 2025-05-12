@@ -1,7 +1,6 @@
 package ar.edu.unahur.obj2.zonas;
 
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.ArrayList;
 import java.util.List;
 
 import ar.edu.unahur.obj2.profugos.IProfugo;
@@ -12,23 +11,21 @@ public class Zona {
 	
 	public Zona(String nombre, List<IProfugo> profugos) {
 		this.nombre = nombre;
-		this.profugos = profugos;
+		this.profugos = new ArrayList<IProfugo>(profugos);
 	}
 	
 	public List<IProfugo> getProfugos(){
 		return profugos;
 	}
 
-	public void eliminarProfugo(IProfugo profugo) {
-		profugos.remove(profugo);
+	public void eliminarProfugos(ArrayList<IProfugo> profugos) {
+		this.profugos.removeAll(profugos);
 	}
 
-	public Integer getCantidadDeProfugos() {
-		return profugos.size();
-	}
-
-	public Integer getHabilidadDeProfugoConMenorHabilidad() {
+	public Integer getMenorHabilidadDeLosProfugos() {
 		return profugos.stream().mapToInt(p -> p.getHabilidad()).min().orElseThrow();
 	}
+
+	
 
 }

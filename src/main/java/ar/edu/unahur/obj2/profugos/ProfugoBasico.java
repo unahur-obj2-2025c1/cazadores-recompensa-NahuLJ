@@ -6,8 +6,13 @@ public class ProfugoBasico implements IProfugo {
 	private Boolean estaNervioso;
 	
 	public ProfugoBasico(Integer inociencia, Integer habilidad, Boolean estaNervioso) {
-		this.inociencia = inociencia;	
-		this.habilidad = habilidad;	
+		this.inociencia = inociencia;
+		if (habilidad > 100){
+			this.habilidad = 100;				
+		}
+		else {
+			this.habilidad = Integer.max(0, habilidad);
+		}
 		this.estaNervioso = estaNervioso;	
 	}
 	
