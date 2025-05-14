@@ -17,8 +17,12 @@ public class Zona {
 	public List<IProfugo> getProfugos(){
 		return profugos;
 	}
+	
+	public String getNombre() {
+		return nombre;
+	}
 
-	public void eliminarProfugos(ArrayList<IProfugo> profugos) {
+	public void eliminarProfugos(List<IProfugo> profugos) {
 		this.profugos.removeAll(profugos);
 	}
 

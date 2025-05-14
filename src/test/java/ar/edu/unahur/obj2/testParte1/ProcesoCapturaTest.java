@@ -14,7 +14,7 @@ import java.util.List;
 public class ProcesoCapturaTest {
 
 	@Test
-	public void testCapturaCazadorUrbano() {
+	void testCapturaCazadorUrbano() {
 	    CazadorUrbano cazador = new CazadorUrbano(10); // experiencia 10
 
 	    IProfugo p1 = new ProfugoBasico(5, 60, true);  // No debe ser capturado
@@ -41,7 +41,7 @@ public class ProcesoCapturaTest {
     
     
 	@Test
-	public void testCapturaSigiloso() {
+	void testCapturaSigiloso() {
 	    CazadorSigiloso cazador = new CazadorSigiloso(15);
 	    IProfugo p1 = new ProfugoBasico(10, 40, true); // Capturado
 	    IProfugo p2 = new ProfugoBasico(12, 60, false); // Intimidado
@@ -61,7 +61,7 @@ public class ProcesoCapturaTest {
     
     
     @Test
-    public void testCapturaRural() {
+    void testCapturaRural() {
         CazadorRural cazador = new CazadorRural(20);
         IProfugo p1 = new ProfugoBasico(10, 30, true); // Capturable
         IProfugo p2 = new ProfugoBasico(15, 45, false); // Intimidado
@@ -79,7 +79,7 @@ public class ProcesoCapturaTest {
     
     
     @Test
-    public void testInocenciaYNivelNoNegativos() {
+    void testInocenciaYNivelNoNegativos() {
         CazadorSigiloso cazador = new CazadorSigiloso(5);
         IProfugo p1 = new ProfugoBasico(10, 3, true); // No capturable
 

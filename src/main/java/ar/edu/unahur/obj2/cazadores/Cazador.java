@@ -1,13 +1,14 @@
 package ar.edu.unahur.obj2.cazadores;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import ar.edu.unahur.obj2.profugos.IProfugo;
 import ar.edu.unahur.obj2.zonas.Zona;
 
 public abstract class Cazador {
 	private Integer experiencia;
-	private ArrayList<IProfugo> profugosCapturados = new ArrayList<>();
+	private List<IProfugo> profugosCapturados = new ArrayList<>();
 	
 	public Cazador(Integer experiencia) {
 		this.experiencia = experiencia;
@@ -48,5 +49,11 @@ public abstract class Cazador {
 	
 	public abstract Boolean condicionDeCaptura(IProfugo profugo);
 	
+	public List<IProfugo> getProfugosCapturados(){
+		return profugosCapturados;
+	}
 	
+	public Integer cantCapturas() {
+		return profugosCapturados.size();
+	}
 }
